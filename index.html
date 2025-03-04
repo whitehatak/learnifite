@@ -3,29 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Enrollment</title>
+    <title>Learnifite - Course Enrollment</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
-            background: linear-gradient(135deg, #007bff, #6610f2);
+            background: linear-gradient(135deg, #1a1a2e, #0f3460);
             color: white;
         }
         .container {
-            max-width: 600px;
+            max-width: 700px;
             margin: 50px auto;
-            padding: 20px;
+            padding: 30px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-        h1 { font-size: 28px; }
+        h1 { font-size: 32px; }
         p { font-size: 18px; }
+        .courses, .policy, .contact {
+            text-align: left;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+        .courses h2, .policy h2, .contact h2 {
+            font-size: 24px;
+            text-align: center;
+        }
+        .courses ul {
+            list-style: none;
+            padding: 0;
+        }
+        .courses li {
+            font-size: 18px;
+            padding: 5px 0;
+        }
         .btn {
             display: inline-block;
-            padding: 12px 20px;
+            padding: 14px 24px;
             font-size: 18px;
             font-weight: bold;
             color: white;
@@ -35,6 +54,7 @@
             cursor: pointer;
             text-decoration: none;
             transition: 0.3s;
+            margin-top: 20px;
         }
         .btn:hover { background: #c70039; }
         .payment-img {
@@ -47,21 +67,52 @@
             font-size: 14px;
             opacity: 0.8;
         }
+        .policy p, .contact p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Enroll in Our Cybersecurity Course</h1>
-        <p>Master ethical hacking, forensics, and network security. <br> Secure your future in cybersecurity!</p>
-        <h2>Price: ₹999</h2>
+        <h1>Welcome to Learnifite</h1>
+        <p>Master the art of cybersecurity, coding, and ethical hacking with our expert-led courses.</p>
 
-        <a href="[YOUR PAYMENT LINK]" class="btn">Enroll Now</a>
+        <div class="courses">
+            <h2>Our Courses</h2>
+            <ul>
+                <li>✅ Ethical Hacking</li>
+                <li>✅ Cyber Forensics</li>
+                <li>✅ Python Programming</li>
+                <li>✅ C Programming</li>
+                <li>✅ Penetration Testing</li>
+                <li>✅ Dark Web for Hackers</li>
+            </ul>
+        </div>
+
+        <h2>Enroll Now for ₹999</h2>
+
+        <a href="[YOUR PAYMENT LINK]" class="btn">Pay & Enroll</a>
 
         <p>Or scan & pay via UPI:</p>
         <img src="qr-code.png" alt="UPI QR Code" class="payment-img">
-        
-        <footer>Powered by [Your Brand] | Secure Payment Gateway</footer>
+
+        <div class="policy">
+            <h2>Terms & Policies</h2>
+            <p><strong>Terms & Conditions:</strong> By enrolling, you agree to abide by our rules and regulations.</p>
+            <p><strong>Privacy Policy:</strong> We collect only necessary data for processing payments and improving user experience.</p>
+            <p><strong>Refund & Cancellation:</strong> Refunds are processed within **3-7 working days** to your original payment method. No refunds after course access is granted.</p>
+        </div>
+
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p><strong>Phone:</strong> +91 95149 17898</p>
+            <p><strong>Email:</strong> learnifite@gmail.com</p>
+            <p><strong>Address:</strong> Learnifite Pvt Ltd, Bengaluru, India</p>
+        </div>
+
+        <footer>© 2025 Learnifite | Secure Payment Gateway</footer>
     </div>
 
 </body>
