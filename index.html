@@ -5,71 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learnifite - Course Enrollment</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Share Tech Mono', monospace;
             margin: 0;
             padding: 0;
             text-align: center;
-            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            background: black;
             color: white;
+            overflow-x: hidden;
+            position: relative;
         }
+
+        /* Background hacker-style animation */
+        body::before {
+            content: "011010 110101 101101 010110 101010 110101 100101";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+            color: rgba(25, 200, 89, 0.15);
+            line-height: 1.5;
+            word-break: break-all;
+            overflow: hidden;
+            white-space: pre-wrap;
+            pointer-events: none;
+            animation: matrixRain 10s linear infinite;
+        }
+
+        @keyframes matrixRain {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
         .container {
             max-width: 700px;
             margin: 50px auto;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.85);
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 20px rgba(25, 200, 89, 0.5);
+            z-index: 2;
+            position: relative;
         }
-        h1 { font-size: 32px; }
-        p { font-size: 18px; }
-        .courses, .policy, .contact {
+
+        h1 {
+            font-size: 32px;
+            color: #19C859;
+            text-shadow: 0 0 10px #19C859;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .courses {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .courses h2 {
+            font-size: 24px;
+            color: #19C859;
+            text-shadow: 0 0 5px #19C859;
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .course-name {
+            font-size: 18px;
+            flex: 2;
+            text-align: left;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #19C859;
+            flex: 1;
+            text-align: center;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+            background: #19C859;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 0 10px #19C859;
+        }
+
+        .btn:hover {
+            background: #138F45;
+            box-shadow: 0 0 15px #138F45;
+        }
+
+        .policy, .contact {
             text-align: left;
             margin-top: 20px;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(25, 200, 89, 0.1);
             border-radius: 8px;
         }
-        .courses h2, .policy h2, .contact h2 {
+
+        .policy h2, .contact h2 {
             font-size: 24px;
+            color: #19C859;
             text-align: center;
+            text-shadow: 0 0 5px #19C859;
         }
-        .courses ul {
-            list-style: none;
-            padding: 0;
+
+        .policy p, .contact p {
+            font-size: 14px;
+            line-height: 1.6;
         }
-        .courses li {
-            font-size: 18px;
-            padding: 5px 0;
-        }
-        .btn {
-            display: inline-block;
-            padding: 14px 24px;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            background: #ff5733;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s;
-            margin-top: 20px;
-        }
-        .btn:hover { background: #c70039; }
-        .payment-img {
-            width: 100%;
-            max-width: 200px;
-            margin-top: 20px;
-        }
+
         footer {
             margin-top: 20px;
             font-size: 14px;
             opacity: 0.8;
-        }
-        .policy p, .contact p {
-            font-size: 14px;
-            line-height: 1.6;
+            color: white;
         }
     </style>
 </head>
@@ -77,32 +149,53 @@
 
     <div class="container">
         <h1>Welcome to Learnifite</h1>
-        <p>Master the art of cybersecurity, coding, and ethical hacking with our expert-led courses.</p>
+        <p>Master cybersecurity, coding, and ethical hacking with expert-led courses.</p>
 
         <div class="courses">
             <h2>Our Courses</h2>
-            <ul>
-                <li>✅ Ethical Hacking</li>
-                <li>✅ Cyber Forensics</li>
-                <li>✅ Python Programming</li>
-                <li>✅ C Programming</li>
-                <li>✅ Penetration Testing</li>
-                <li>✅ Dark Web for Hackers</li>
-            </ul>
+            
+            <div class="course-item">
+                <span class="course-name">Ethical Hacking</span>
+                <span class="price">₹1499</span>
+                <a href="https://rzp.io/rzp/dN7jskU" class="btn">Enroll</a>
+            </div>
+
+            <div class="course-item">
+                <span class="course-name">Cyber Forensics</span>
+                <span class="price">₹1299</span>
+                <a href="https://rzp.io/rzp/9n5c6BU" class="btn">Enroll</a>
+            </div>
+
+            <div class="course-item">
+                <span class="course-name">Python Programming</span>
+                <span class="price">₹999</span>
+                <a href="https://rzp.io/rzp/GJLLZ4Ic" class="btn">Enroll</a>
+            </div>
+
+            <div class="course-item">
+                <span class="course-name">C Programming</span>
+                <span class="price">₹799</span>
+                <a href="https://rzp.io/rzp/pLzNGW3p" class="btn">Enroll</a>
+            </div>
+
+            <div class="course-item">
+                <span class="course-name">Penetration Testing</span>
+                <span class="price">₹1999</span>
+                <a href="https://rzp.io/rzp/xgfUbRU" class="btn">Enroll</a>
+            </div>
+
+            <div class="course-item">
+                <span class="course-name">Dark Web for Hackers</span>
+                <span class="price">₹599</span>
+                <a href="https://rzp.io/rzp/zS0Tyga" class="btn">Enroll</a>
+            </div>
         </div>
-
-        <h2>Enroll Now for ₹999</h2>
-
-        <a href="[YOUR PAYMENT LINK]" class="btn">Pay & Enroll</a>
-
-        <p>Or scan & pay via UPI:</p>
-        <img src="qr-code.png" alt="UPI QR Code" class="payment-img">
 
         <div class="policy">
             <h2>Terms & Policies</h2>
             <p><strong>Terms & Conditions:</strong> By enrolling, you agree to abide by our rules and regulations.</p>
             <p><strong>Privacy Policy:</strong> We collect only necessary data for processing payments and improving user experience.</p>
-            <p><strong>Refund & Cancellation:</strong> Refunds are processed within **3-7 working days** to your original payment method. No refunds after course access is granted.</p>
+            <p><strong>Refund & Cancellation:</strong> Refunds are processed within <strong>3-7 working days</strong> to your original payment method. No refunds 3 days after accessing the course.</p>
         </div>
 
         <div class="contact">
